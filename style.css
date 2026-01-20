@@ -1,0 +1,888 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+}
+
+.nav-links a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #374151;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+/* Hover effect for links */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* ===== HAMBURGER BUTTON (for mobile) ===== */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero-dark {
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at top left, #5950ff, transparent 45%),
+        radial-gradient(circle at bottom right, #9333ea, transparent 45%),
+        #2c2c2c;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero-dark-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    flex-wrap: wrap;
+}
+
+/* ===== Image ===== */
+.hero-image img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.4);
+    border: 4px solid rgba(99, 102, 241, 0.45);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Content ===== */
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+    background: linear-gradient(90deg, #b298ff, #14e0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #cbd5f5;
+    max-width: 620px;
+    margin-bottom: 32px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Buttons ===== */
+.hero-actions {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.btn-outline {
+    padding: 12px 28px;
+    border-radius: 10px;
+    border: 2px solid #6366f1;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background: rgba(99, 102, 241, 0.3);
+    transition: 0.4s;
+    z-index: 0;
+}
+
+.btn-outline:hover::after {
+    height: 100%;
+}
+
+.btn-outline:hover {
+    color: #ffffff;
+    border-color: #22d3ee;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+    transform: translateY(-3px);
+}
+
+/* ===== Socials ===== */
+.hero-socials {
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
+}
+
+.hero-socials a {
+    color: #cbd5f5;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.hero-socials a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #15e0ff;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+.hero-socials a:hover::after {
+    width: 100%;
+}
+
+.hero-socials a:hover {
+    color: #ffffff;
+}
+
+
+
+/* ===== ABOUT ===== */
+#about {
+    padding: 100px 10%;
+    background: #f5f5f5;
+}
+
+#about h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #2563eb;
+    margin: 10px auto 40px;
+}
+
+.about-card {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px 30px;
+    background: #ffffff;
+    border-left: 6px solid #2563eb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.about-card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #1b1d20;
+    margin-bottom: 15px;
+}
+
+
+
+/* ===== SKILLS SECTION ===== */
+#skills {
+    padding: 80px 10%;
+    background: #f9fafb;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* ===== SKILLS SECTION ===== */
+.skills-section {
+    padding: 80px 10%;
+    background: #f9fafb;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-title,
+.skills-title,
+.project-title,
+.achievement-title,
+.contact-title,
+.hobby-title {
+    text-align: center;
+    font-size: 35px;
+    color: #2563eb;
+    margin-bottom: 60px;
+}
+
+/* Layout */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 60px;
+}
+
+/* Skill Card */
+.skill-card {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.skill-card h3 {
+    font-size: 20px;
+    margin: 12px 0;
+    color: #111827;
+}
+
+/* Skill Icon */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+/* Skill Bar */
+.skill-bar {
+    width: 100%;
+    height: 14px;
+    background: #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+/* Fill the bar */
+.skill-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #2563eb, #22d3ee);
+    border-radius: 12px;
+    text-align: right;
+    line-height: 14px;
+    color: black;
+    font-size: 14px;
+    padding-right: 6px;
+    transition: width 1s ease;
+}
+
+/* Set percentages */
+.p90 {
+    width: 90%;
+}
+
+.p85 {
+    width: 85%;
+}
+
+.p80 {
+    width: 80%;
+}
+
+.p75 {
+    width: 75%;
+}
+
+.p70 {
+    width: 70%;
+}
+
+.p65 {
+    width: 65%;
+}
+
+
+
+/* project section */
+
+#projects {
+    padding: 80px 10%;
+    background: #f5f5f5;
+}
+
+/* GRID ROW */
+.project-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    width: 100%;
+    margin: 50px auto;
+    /* 👈 center align */
+
+    padding: 50px 30px;
+    background: linear-gradient(to bottom, #f6faff, #ffffff);
+    border-radius: 22px;
+    box-shadow: 0 2px 13px rgba(59, 130, 246, 0.2);
+    transition: 0.3s ease;
+}
+
+
+.project-row:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(24, 112, 255, 0.28);
+}
+
+/* LEFT CONTENT */
+.project-content h3 {
+    font-size: 24px;
+    color: #2e2f36;
+    border-bottom: 1.5px solid rgb(221, 221, 221);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.project-content p,
+.project-content li {
+    font-size: 18px;
+    color: #1b1d20;
+    line-height: 1.9;
+}
+
+/* RIGHT IMAGE CONTAINER */
+.project-image {
+    display: flex;
+    justify-content: flex-end;
+    /* push image to right */
+}
+
+/* IMAGE */
+.project-image img {
+    width: 100%;
+    max-width: 420px;
+    height: 270px;
+    border-radius: 14px;
+    background: #f8fafc;
+    padding: 8px;
+    box-shadow: inset 0 0 0 1px #e5e7eb;
+    transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.05);
+}
+
+/* BUTTON */
+.btn-project {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 26px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* ===== ACHIEVEMENTS & CERTIFICATIONS ===== */
+#achievements,#certifications {
+    padding: 90px 6%;
+    background: #f9fafb;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Section Title */
+.achievement-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 55px;
+}
+
+/* ===== GRID ===== */
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 30px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ===== CARD ===== */
+.achievement-card {
+    background: #ffffff;
+    border-radius: 16px;
+    height: 315px;                 /* Same height */
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== IMAGE WRAPPER ===== */
+.achievement-img {
+    height: 220px;                 /* Same image height */
+    overflow: hidden;              /* Hide zoom overflow */
+}
+
+/* ===== IMAGE ===== */
+.achievement-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth zoom */
+}
+
+/* Zoom image ONLY on hover */
+.achievement-card:hover .achievement-img img {
+    transform: scale(1.08);
+}
+
+/* ===== TITLE ===== */
+.achievement-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111827;
+    text-align: center;
+    padding: 28px 14px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ===== HOBBIES & INTERESTS ===== */
+#hobbies {
+    padding: 80px 8%;
+    background: #f9fafb;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hobby-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* ===== Container ===== */
+.hobby-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+/* ===== Card ===== */
+.hobby-card {
+    background: #ffffff;
+    padding: 22px 15px;
+    border-radius: 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover background layer */
+.hobby-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #4557ff, #22d3ee);
+    transition: top 0.4s ease;
+    z-index: 0;
+}
+
+.hobby-card:hover::before {
+    top: 0;
+}
+
+/* Keep content above hover */
+.hobby-card * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover effect */
+.hobby-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Icon ===== */
+.hobby-icon {
+    font-size: 34px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* ===== Text ===== */
+.hobby-card h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #111827;
+    transition: color 0.3s ease;
+}
+
+/* Text color on hover */
+.hobby-card:hover h3 {
+    color: #ffffff;
+}
+
+
+
+
+/* ===== CONTACT SECTION ===== */
+#contact {
+    padding: 80px 10%;
+    background: #f5f5f5;
+}
+
+.contact-container {
+    display: flex;
+    gap: 60px;
+    /* space between left info and form */
+    max-width: 1000px;
+    margin: auto;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    /* keep side by side on desktop */
+}
+
+.contact-info {
+    flex: 1;
+    /* left side takes proportional space */
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    min-width: 250px;
+    /* ensure it doesn't shrink too small */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.info-item .icon {
+    font-size: 32px;
+    color: #2563eb;
+}
+
+.info-item .text strong {
+    display: block;
+    font-size: 17px;
+    color: #374151;
+}
+
+.info-item .text p {
+    margin: 0;
+    font-size: 17px;
+    color: #374151;
+}
+
+.info-item .text a {
+    font-size: 17px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.info-item .text a:hover {
+    text-decoration: underline;
+}
+
+.contact-card {
+    flex: 1;
+    /* form takes proportional space */
+    max-width: 500px;
+    /* form width on desktop */
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+}
+
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    padding: 12px 18px;
+    font-size: 17px;
+    border-radius: 8px;
+    border: 1.5px solid #c7d2fe;
+    transition: border-color 0.3s ease;
+    width: 100%;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    border-color: #2563eb;
+}
+
+.contact-card textarea {
+    resize: none;
+}
+
+.contact-card button {
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    background: #2563eb;
+}
+
+.contact-card button:hover {
+    background: #1d4ed8;
+}
+
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #0b1e48;
+    color: #ffffff;
+    padding: 60px 10px 10px;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 90px;
+}
+
+.footer-section h4 {
+    color: #ffffff;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e1e8ff;
+    margin-bottom: 12px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #cbd5f5;
+    font-size: 15px;
+}
+
+.footer-section ul li a:hover {
+    color: #38bdf8;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #394454;
+    text-align: center;
+    font-size: 14px;
+    color: #c0daff;
+}
+
+/* ===== SCROLL TO TOP BUTTON ===== */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#scrollTopBtn:hover {
+    background: #1e40af;
+    transform: translateY(-4px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+    /* Hero buttons */
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Projects grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        max-width: 100%;
+    }
+
+    /* Achievements grid */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact section */
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .contact-info,
+    .contact-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #ffffff;
+        border-top: 1px solid #e5e7eb;
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    /* Footer responsive */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    #hobbies {
+        padding: 60px 6%;
+    }
+}
