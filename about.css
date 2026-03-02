@@ -81,8 +81,8 @@ hr {
 }
 
 .profile-images img {
-    width: 96%;
-    max-height: 480px;
+    width: 98%;
+    max-height: 530px;
     margin-top:25%;
     object-fit: cover;
     border-radius: 8px;
